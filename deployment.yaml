@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pokemon-ialonso
+  namespace: demo-argocd-ialonso
+spec:
+  selector:
+    matchLabels:
+      app: pokemon-ialonso
+  replicas: 2
+  strategy:
+      type: RollingUpdate
+      rollingUpdate:
+        maxSurge: 1
+        maxUnavailable: 0    
+  template:
+    metadata:
+      labels:
+        app: pokemon-ialonso
+        project: projectpokemon
+        version: 0.0.1
+    spec:
+      containers:
+      - name: pokemon-container
+        image: ciberado/pokemon-nodejs:0.0.1
+        ports:
+        - containerPort: 80
