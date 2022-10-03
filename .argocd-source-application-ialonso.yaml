@@ -1,0 +1,3 @@
+kustomize:
+  images:
+  - ciberado/pokemon-nodejs:0.0.3
