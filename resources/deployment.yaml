@@ -18,10 +18,9 @@ spec:
       labels:
         app: pokemon-ialonso
         project: projectpokemon
-        version: 0.0.1
     spec:
       containers:
       - name: pokemon-container
-        image: ciberado/pokemon-nodejs:0.0.1
+        image: 641026500518.dkr.ecr.eu-west-1.amazonaws.com/ialonso-pokemon:0.0.1
         ports:
         - containerPort: 80
